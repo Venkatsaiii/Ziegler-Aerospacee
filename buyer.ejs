@@ -1,0 +1,43 @@
+<% layout('layouts/boilerplate') %>
+<style>
+.searchbar{
+     margin-left: 15%;
+     padding:15px;
+     border-radius: 10px;
+   }
+</style>
+
+<input id="searchbar" onkeyup="search_animal()" type="text"
+        name="search" placeholder="Search animals..">
+        <button>submit</button>
+</form>
+<% for (let campground of buyer){%>
+<div class="card" mb-3>
+
+  <div class="row">
+      <div class="col-md-4">
+
+          <img class="img-fluid" alt="" src="<%=campground.image%>">
+      </div>
+      <div class="col-md-8">
+          <div class="card-body">
+              <h5 class="card-title"><%= campground.name %> </h5>
+              </div>
+              <div class="mt-4">
+              <p class="card-text" style="font-style: :bold"><%= campground.price %></p>
+              </div>
+              <div class="my-2">
+
+
+                  <a href="/buyer/<%= campground.id %>">
+                    <button  class="btn btn-primary">Add to Cart</button>
+                  </a>
+
+
+
+              </div>
+
+          </div>
+      </div>
+  </div>
+<% }%>

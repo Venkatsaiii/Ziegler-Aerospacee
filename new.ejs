@@ -1,0 +1,28 @@
+<% layout('layouts/boilerplate') %>
+<form action="/new" method="post" novalidate class="validated-form">
+
+
+  <div >
+    <label class="form-label" for="image">Image Url</label>
+          <input class="form-control" type="text" id="image" name="buyer[image]" >
+  </div>
+
+
+  <div>
+    <label class="form-label" for="name">Title</label>
+            <input class="form-control" type="text" id="name" name="buyer[name]" required>
+  </div>
+  <div>
+    <label class="form-label" for="seller">Seller name</label>
+            <input class="form-control" type="text" id="seller" name="seller[name]" required>
+  </div>
+  <div>
+  <label class="form-label" for="price">Campground Price</label>
+          <div class="input-group">
+              <span class="input-group-text" id="price-label">$</span>
+              <input type="Number" class="form-control" id="price" placeholder="0.00" aria-label="price"
+                  aria-describedby="price-label" name="buyer[price]" required>
+          </div>
+          </div>
+          <button>submit</button>
+  </form>
